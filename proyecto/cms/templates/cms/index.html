@@ -1,0 +1,9 @@
+{% if content_list %}
+    <ul>
+    {% for content in content_list %}
+        <li><a href="/cms/{{ content.clave }}">{{ content.clave }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No contents are available.</p>
+{% endif %}
