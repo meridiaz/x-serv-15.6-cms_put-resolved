@@ -30,6 +30,17 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+STATIC_ROOT = "/var/www/example.com/static/"
+
+MEDIA_URL = '/media/' #esto es cuando el usuario sube archivos
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
+
 INSTALLED_APPS = [
     'cms.apps.CmsConfig',
     'django.contrib.admin',
@@ -55,7 +66,7 @@ ROOT_URLCONF = 'proyecto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates', ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
