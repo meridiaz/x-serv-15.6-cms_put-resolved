@@ -1,0 +1,24 @@
+<h1>{{ contenido.valor }}</h1>
+{% for comentario in contenido.comentario_set.all %}
+    <hr>
+    <h1>{{ comentario.titulo }}</h1><br>
+        {{ comentario.cuerpo }}<br>
+        Enviado el {{ comentario.fecha }}<br>
+{% endfor %}
+
+<hr>
+<br>
+<form action="" method="POST">
+  Introduce el (nuevo) contenido para esta página: 
+  <input type="text" name="valor">
+  <input type="submit" name="action" value="Enviar Contenido">
+</form>
+
+<br>
+<form action="" method="POST">
+  Introduce un nuevo comentario para esta página: 
+  <br>Título: <input type="text" name="titulo">
+  <br>Cuerpo: <input type="text" name="cuerpo">
+  <input type="submit" name="action" value="Enviar Comentario">
+</form>
+
